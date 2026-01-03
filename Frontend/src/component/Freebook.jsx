@@ -1,65 +1,79 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-import list from "../../public/list.json"
-import Cards from './Cards';
+import Cards from "./Cards";
 
 function Freebook() {
-    const filterData=list.filter((data)=>data.category === "Free");
+  const [book, setBook] = useState([]);
 
-    console.log(filterData);
-    var settings = {
+  useEffect(() => {
+    const getBook = async () => {
+      try {
+        const res = await axios.get("http://localhost:5001/book");
+        const data = res.data.filter(
+          (item) => item.category === "Free"
+        );
+        setBook(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getBook();
+  }, []);
+
+  const settings = {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    initialSlide: 0,
+    slidesToShow: 4,
+    slidesToScroll: 4,
     responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          infinite: true,
-          dots: true
-        }
+        },
       },
       {
-        breakpoint: 600,
+        breakpoint: 640,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 1
-        }
+        },
       },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-    };
+    ],
+  };
+
   return (
-    <div className='max-w-screen-2xl container mx-auto md:px-20 px-4'>
-         <div><h1 className='font-semibold text-xl pb-2'>Free Offered Courses</h1>
-         <p className='mb-8'>This book is provided free of cost to support learners enrolled in our offered courses and to encourage continuous learning through the library.</p>
-        
-        <div >
-        <Slider {...settings}>
-        {filterData.map((item)=>(
-            <Cards item={item} key={item.id}/>
+    <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 py-10">
+      <h1 className="font-semibold text-xl pb-2">
+        Free Offered Courses
+      </h1>
+      <p className="mb-8 text-gray-600">
+        This book is provided free of cost to support learners enrolled
+        in our offered courses and to encourage continuous learning
+        through the library.
+      </p>
+
+      <Slider {...settings}>
+        {book.map((item) => (
+          <Cards key={item.id} item={item} />
         ))}
       </Slider>
-      </div>
     </div>
-    </div>
-  )
+  );
 }
 
-export default Freebook
+export default Freebook;

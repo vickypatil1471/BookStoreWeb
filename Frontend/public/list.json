@@ -1,59 +1,202 @@
 [
-    {
-        "id":"1",
-        "name":"Story Book",
-        "title":"XYZ",
-        "price":0,
-        "category":"Free",
-        "image":"https://i.pinimg.com/736x/42/cb/39/42cb39494eae1e5f94b1543f8ab7e0f5.jpg"
-    },
-    {
-        "id":"2",
-        "name":"Story Book",
-        "title":"XYZ",
-        "price":0,
-        "category":"Free",
-        "image":"https://i.pinimg.com/1200x/ec/ad/9e/ecad9ef066f9eb7de0431a9f9f312f30.jpg"
-    },
-    {
-        "id":"3",
-        "name":"Story Book",
-        "title":"XYZ",
-        "price":0,
-        "category":"Free",
-        "image":"https://i.pinimg.com/736x/71/f3/a9/71f3a96258b418dce02b2544498f79f2.jpg"
-    },
-    {
-        "id":"4",
-        "name":"Story Book",
-        "title":"XYZ",
-        "price":0,
-        "category":"Free",
-        "image":"https://i.pinimg.com/736x/66/83/fd/6683fd7c6eed198995ed65662e860f8f.jpg"
-    },
-    {
-        "id":"5",
-        "name":"Story Book",
-        "title":"XYZ",
-        "price":0,
-        "category":"Free",
-        "image":"https://i.pinimg.com/736x/7d/41/f9/7d41f9df469423395802a803700b8569.jpg"
-    },
-    {
-        "id":"6",
-        "name":"Story Book",
-        "title":"XYZ",
-        "price":0,
-        "category":"Free",
-        "image":"https://i.pinimg.com/736x/01/af/1b/01af1b2bc2a5960a7ebe6c6b31643486.jpg"
-    },
-    {
-        "id":"7",
-        "name":"Story Book",
-        "title":"XYZ",
-        "price":0,
-        "category":"Free",
-        "image":"https://i.pinimg.com/736x/42/cb/39/42cb39494eae1e5f94b1543f8ab7e0f5.jpg"
-    }
-
+  {
+    "id": "1",
+    "name": "Wonder Wood",
+    "title": "Vicky Patil",
+    "price": 0,
+    "category": "Free",
+    "image": "https://i.pinimg.com/736x/42/cb/39/42cb39494eae1e5f94b1543f8ab7e0f5.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Python Programming Bible 2024",
+    "title": "James P. Meyers",
+    "price": 499,
+    "category": "Programming Book",
+    "image": "https://i.pinimg.com/1200x/ec/ad/9e/ecad9ef066f9eb7de0431a9f9f312f30.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Data Structure and Algorithms",
+    "title": "James A. Storer",
+    "price": 549,
+    "category": "DSA Book",
+    "image": "https://i.pinimg.com/736x/71/f3/a9/71f3a96258b418dce02b2544498f79f2.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Data Analytics",
+    "title": "Wiley Publications",
+    "price": 0,
+    "category": "Free",
+    "image": "https://i.pinimg.com/736x/66/83/fd/6683fd7c6eed198995ed65662e860f8f.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Secrets of the Lost Wood",
+    "title": "Tori Kate",
+    "price": 359,
+    "category": "Story Book",
+    "image": "https://i.pinimg.com/736x/7d/41/f9/7d41f9df469423395802a803700b8569.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Database System Concepts",
+    "title": "Carlos Coronel",
+    "price": 0,
+    "category": "Free",
+    "image": "https://i.pinimg.com/736x/01/af/1b/01af1b2bc2a5960a7ebe6c6b31643486.jpg"
+  },
+  {
+    "id": "7",
+    "name": "Enchanted Forest",
+    "title": "Yash Patil",
+    "price": 399,
+    "category": "Story Book",
+    "image": "https://i.pinimg.com/1200x/71/98/73/71987378767ab407796e0106f25d1791.jpg"
+  },
+  {
+    "id": "8",
+    "name": "Harry Potter and the Sorcerer's Stone",
+    "title": "J. K. Rowling",
+    "price": 0,
+    "category": "Free",
+    "image": "https://i.pinimg.com/1200x/ad/19/c1/ad19c1392245f71cf08dd1984d2cf52f.jpg"
+  },
+  {
+    "id": "9",
+    "name": "Positive Thinking",
+    "title": "Amanda Fox",
+    "price": 0,
+    "category": "Free",
+    "image": "https://i.pinimg.com/736x/79/c2/09/79c2094bd45e7cd147e1848a0c3bb849.jpg"
+  },
+  {
+    "id": "10",
+    "name": "Learn Java in 30 Days",
+    "title": "Herbert Schildt",
+    "price": 599,
+    "category": "Programming Book",
+    "image": "https://i.pinimg.com/736x/88/3e/f1/883ef18c4453b3d96bf0a03f022663d5.jpg"
+  },
+  {
+    "id": "11",
+    "name": "Clean Code",
+    "title": "Robert C. Martin",
+    "price": 699,
+    "category": "Programming Book",
+    "image": "https://i.pinimg.com/736x/11/eb/25/11eb252a18738c71703f618c2143c08d.jpg"
+  },
+  {
+    "id": "12",
+    "name": "Operating System Concepts",
+    "title": "Abraham Silberschatz",
+    "price": 799,
+    "category": "Computer Science",
+    "image": "https://i.pinimg.com/736x/72/76/90/72769021bbcaa3450e8641cec05cd77e.jpg"
+  },
+  {
+    "id": "13",
+    "name": "Computer Networks",
+    "title": "Jie K. Wang",
+    "price": 649,
+    "category": "Computer Science",
+    "image": "https://i.pinimg.com/736x/1e/43/a5/1e43a5413aaccb7fff47b0a6c64582dd.jpg"
+  },
+  {
+    "id": "14",
+    "name": "The Power of Habit",
+    "title": "Charles Duhigg",
+    "price": 299,
+    "category": "Motivation",
+    "image": "https://i.pinimg.com/736x/7d/41/f9/7d41f9df469423395802a803700b8569.jpg"
+  },
+  {
+    "id": "15",
+    "name": "Think and Grow Rich",
+    "title": "Napoleon Hill",
+    "price": 0,
+    "category": "Free",
+    "image": "https://i.pinimg.com/1200x/71/98/73/71987378767ab407796e0106f25d1791.jpg"
+  },
+  {
+    "id": "16",
+    "name": "Artificial Intelligence Basics",
+    "title": "Stuart Russell",
+    "price": 899,
+    "category": "AI Book",
+    "image": "https://i.pinimg.com/736x/01/af/1b/01af1b2bc2a5960a7ebe6c6b31643486.jpg"
+  },
+  {
+    "id": "17",
+    "name": "Machine Learning with Python",
+    "title": "Sebastian Raschka",
+    "price": 749,
+    "category": "AI Book",
+    "image": "https://i.pinimg.com/736x/71/f3/a9/71f3a96258b418dce02b2544498f79f2.jpg"
+  },
+  {
+    "id": "18",
+    "name": "Deep Learning Illustrated",
+    "title": "Jon Krohn",
+    "price": 899,
+    "category": "AI Book",
+    "image": "https://i.pinimg.com/1200x/ec/ad/9e/ecad9ef066f9eb7de0431a9f9f312f30.jpg"
+  },
+  {
+    "id": "19",
+    "name": "The Alchemist",
+    "title": "Paulo Coelho",
+    "price": 299,
+    "category": "Story Book",
+    "image": "https://i.pinimg.com/736x/66/83/fd/6683fd7c6eed198995ed65662e860f8f.jpg"
+  },
+  {
+    "id": "20",
+    "name": "Atomic Habits",
+    "title": "James Clear",
+    "price": 399,
+    "category": "Motivation",
+    "image": "https://i.pinimg.com/736x/7d/41/f9/7d41f9df469423395802a803700b8569.jpg"
+  },
+  {
+    "id": "21",
+    "name": "Cloud Computing Concepts",
+    "title": "Rajkumar Buyya",
+    "price": 649,
+    "category": "Technology",
+    "image": "https://i.pinimg.com/736x/01/af/1b/01af1b2bc2a5960a7ebe6c6b31643486.jpg"
+  },
+  {
+    "id": "22",
+    "name": "Cyber Security Essentials",
+    "title": "William Stallings",
+    "price": 599,
+    "category": "Security",
+    "image": "https://i.pinimg.com/736x/71/f3/a9/71f3a96258b418dce02b2544498f79f2.jpg"
+  },
+  {
+    "id": "23",
+    "name": "Introduction to Blockchain",
+    "title": "Imran Bashir",
+    "price": 699,
+    "category": "Technology",
+    "image": "https://i.pinimg.com/1200x/ec/ad/9e/ecad9ef066f9eb7de0431a9f9f312f30.jpg"
+  },
+  {
+    "id": "24",
+    "name": "UI UX Design Basics",
+    "title": "Don Norman",
+    "price": 449,
+    "category": "Design",
+    "image": "https://i.pinimg.com/736x/66/83/fd/6683fd7c6eed198995ed65662e860f8f.jpg"
+  },
+  {
+    "id": "25",
+    "name": "Digital Marketing Fundamentals",
+    "title": "Philip Kotler",
+    "price": 399,
+    "category": "Marketing",
+    "image": "https://i.pinimg.com/736x/7d/41/f9/7d41f9df469423395802a803700b8569.jpg"
+  }
 ]

@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Login from './Login';
+import Logout from './Logout';
+import { useAuth } from '../context/authprovider';
 
 function Navbar() {
+
+  const [authUser]=useAuth()
+
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") || "light"
   );
@@ -111,11 +116,16 @@ function Navbar() {
     <path d="M21.64 13a9 9 0 1 1-10.6-10.6 7 7 0 1 0 10.6 10.6z"/>
   </svg>
 </label>
+
+{
+  authUser?<Logout/>:
   <div className="">
     <a className="bg-black text-white px-3 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer" 
     onClick={()=> document.getElementById("my_modal_3").showModal()}>Login</a>
     <Login/>
   </div>
+}
+    
 </div>
 </div>
     </div>
