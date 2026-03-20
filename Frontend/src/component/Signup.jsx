@@ -114,7 +114,7 @@ function Signup() {
                 type="button"
                 className="underline text-blue-500 ml-1"
                 onClick={() =>
-                  document.getElementById("login_modal").showModal()
+                  document.getElementById("my_modal_3").showModal()
                 }
               >
                 Login

@@ -1,6 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useCart } from "../context/cartprovider";
+
 
 function Cards({ item }) {
+
+  const navigate = useNavigate();
+const { addToCart } = useCart();
+console.log(item);
+
+
   return (
     <div className="px-4 mb-10">
       <div className="card bg-base-100 w-full shadow-lg h-full hover:scale-105 duration-300">
@@ -29,7 +38,7 @@ function Cards({ item }) {
 
           {/* Author */}
           <p className="text-gray-600 text-sm sm:text-base mt-1">
-            {item.title}
+            {item.author}
           </p>
 
           {/* Price + Button */}
@@ -38,9 +47,16 @@ function Cards({ item }) {
               ₹{item.price}
             </div>
 
-            <button className="px-4 py-2 rounded-full border-2 border-pink-400 text-pink-500 hover:bg-pink-400 hover:text-white transition font-semibold">
-              Buy Now
-            </button>
+            <button
+  className="px-4 py-2 rounded-full border-2 border-pink-400 text-pink-500 hover:bg-pink-400 hover:text-white transition font-semibold"
+  onClick={() => {
+    addToCart(item);
+    navigate("/cart");
+  }}
+>
+  Buy Now
+</button>
+
           </div>
 
         </div>
