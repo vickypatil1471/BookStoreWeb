@@ -9,28 +9,14 @@ function Banner() {
         <div className="w-full order-2 md:order-1 md:w-1/2 mt-12 md:mt-32">
             <div className='space-y-12'>
                 <h1 className='text-4xl font-bold'>Hello Readers, Welcome Here to learn Something <span className='text-pink-400'>New Everyday !!!</span></h1>
-            <p className='text-xl'>
+            <p className='text-2xl'>
                Welcome to <span className='text-orange-300'>Finolex College Library!</span><br></br>
                 We make it simple to find your next great read.Browse a world of stories,from new hits to old favorites.Your next adventure starts here, happy reading!
             </p>
-                <label className="input validator w-full">
-  <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <g
-      strokeLinejoin="round"
-      strokeLinecap="round"
-      strokeWidth="2.5"
-      fill="none"
-      stroke="currentColor"
-    >
-      <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-    </g>
-  </svg>
-  <input type="email" placeholder="mail@site.com" required />
-</label>
-<div className="validator-hint hidden">Enter valid email address</div>   
+                
+  
             </div> 
-            <button className="btn btn-secondary mt-6">Get Started</button>   
+              
         </div>
         <div className="w-full order-1 md:2 md:w-1/2 mt-12 md:mt-32">
             <img src={banner} className="w-full h-full" alt="" />

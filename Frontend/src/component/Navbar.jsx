@@ -2,14 +2,33 @@ import React, { useEffect, useState } from 'react'
 import Login from './Login';
 import Logout from './Logout';
 import { useAuth } from '../context/authprovider';
+import { Link } from "react-router-dom";
+import { useCart } from "../context/cartprovider";
+import { useSearch } from '../context/searchprovider';
+import { useAdminAuth } from "../context/adminAuthProvider";
 
 function Navbar() {
+  const { setSearchTerm } = useSearch();
 
-  const [authUser]=useAuth()
+  const { cart } = useCart();
+
+  const [authUser]=useAuth();
+
+  const [adminUser] = useAdminAuth();
+
 
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") || "light"
   );
+  useEffect(() => {
+  const input = document.querySelector('input[type="search"]');
+  if (!input) return;
+
+  const handler = (e) => setSearchTerm(e.target.value.toLowerCase());
+
+  input.addEventListener("input", handler);
+  return () => input.removeEventListener("input", handler);
+}, []);
 
   useEffect(() => {
     const html = document.documentElement;
@@ -39,7 +58,7 @@ function Navbar() {
         <a href='/'>Home</a>
       </li>
       <li>
-        <a href='/course'>Course</a>
+        <a href='/course'>Books</a>
       </li>
       <li>
         <a href='/contact'>Contact</a>
@@ -116,6 +135,33 @@ function Navbar() {
     <path d="M21.64 13a9 9 0 1 1-10.6-10.6 7 7 0 1 0 10.6 10.6z"/>
   </svg>
 </label>
+<Link
+  to="/cart"
+  className="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-base-200 transition duration-300"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m13-9l2 9m-5-9v9"
+    />
+  </svg>
+
+  {cart.length > 0 && (
+    <span className="absolute -top-1 -right-1 bg-error text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold shadow">
+      {cart.length}
+    </span>
+  )}
+</Link>
+
+
 
 {
   authUser?<Logout/>:
@@ -125,7 +171,21 @@ function Navbar() {
     <Login/>
   </div>
 }
-    
+{/* 🔐 ADMIN SIGN IN BUTTON */}
+{!adminUser && (
+  <Link to="/admin/login">
+    <button className="btn btn-outline bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold hover:opacity-90 transition ml-2">
+      Admin 
+    </button>
+  </Link>
+)}
+{adminUser && (
+  <Link to="/admin">
+    <button className="btn btn-error ml-2 bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold hover:opacity-90 transition">
+      Admin
+    </button>
+  </Link>
+)}    
 </div>
 </div>
     </div>

@@ -6,9 +6,15 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 import Cards from "./Cards";
+import { useSearch } from "../context/searchprovider";
 
 function Freebook() {
+  const { searchTerm } = useSearch()
   const [book, setBook] = useState([]);
+
+  const filteredBooks = book.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
 
   useEffect(() => {
     const getBook = async () => {
@@ -57,8 +63,8 @@ function Freebook() {
   };
 
   return (
-    <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 py-10">
-      <h1 className="font-semibold text-xl pb-2">
+    <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 py-0">
+      <h1 className="font-semibold text-3xl pb-2 py-0">
         Free Offered Courses
       </h1>
       <p className="mb-8 text-gray-600">
@@ -68,10 +74,20 @@ function Freebook() {
       </p>
 
       <Slider {...settings}>
-        {book.map((item) => (
-          <Cards key={item.id} item={item} />
-        ))}
+        {filteredBooks.length > 0 ? (
+            filteredBooks.map((item) => (
+              <Cards key={item._id} item={item} />
+            ))
+          ) : (
+            <p className="col-span-full text-center text-gray-500">
+              No courses found
+            </p>
+          )}
       </Slider>
+       {/* COURSE LIST */}
+        
+          
+        
     </div>
   );
 }
